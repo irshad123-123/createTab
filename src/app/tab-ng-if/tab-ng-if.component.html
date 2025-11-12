@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Tab Using (ngIf)</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul class="nav nav-pills mb-2">
+                    <li class="nav-item">
+                        <a 
+                        [ngClass] = "{
+                            active  : selectedSkill.toLowerCase().includes('html')
+                        }"
+                        (click) = "onSelectionSkill('html')"
+                        href="javascript:;" class="nav-link">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        [ngClass] = "{
+                            active : selectedSkill.toLowerCase().includes('css')
+                        }"
+                        (click) = "onSelectionSkill('css')"
+                        href="javascript:;" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        [ngClass] = "{
+                            active : selectedSkill.toLowerCase().includes('javascript')
+                        }"
+                        (click) = "onSelectionSkill('javascript')"
+                        href="javascript:;" class="nav-link">Javascript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a 
+                        [ngClass] = "{
+                            active : selectedSkill.toLowerCase().includes('angular')
+                        }"
+                        (click) = "onSelectionSkill('angular')"
+                        href="javascript:;" class="nav-link">Angular</a>
+                    </li>
+                </ul>
+                <div class="card" *ngIf = "selectedSkill.toLowerCase().includes('html')">
+                    <div class="card-body mb-0 pb-0">
+                        <p><strong>HTML</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                            sapiente veniam eaque
+                            debitis est iste ullam consequatur unde, adipisci nostrum? In, veritatis at? Fugit quibusdam
+                            vel
+                            distinctio eligendi. Quod, dolore!</p>
+                    </div>
+                </div>
+                <div class="card" *ngIf = "selectedSkill.toLowerCase().includes('css')">
+                    <div class="card-body mb-0 pb-0">
+                        <p><strong>CSS</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                            sapiente veniam eaque
+                            debitis est iste ullam consequatur unde, adipisci nostrum? In, veritatis at? Fugit quibusdam
+                            vel
+                            distinctio eligendi. Quod, dolore!</p>
+                    </div>
+                </div>
+                <div class="card" *ngIf = "selectedSkill.toLowerCase().includes('javascript')">
+                    <div class="card-body mb-0 pb-0">
+                        <p><strong>Javascript</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis sapiente veniam eaque
+                            debitis est iste ullam consequatur unde, adipisci nostrum? In, veritatis at? Fugit quibusdam
+                            vel
+                            distinctio eligendi. Quod, dolore!</p>
+                    </div>
+                </div>
+                <div class="card" *ngIf = "selectedSkill.toLowerCase().includes('angular')">
+                    <div class="card-body mb-0 pb-0">
+                        <p><strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                            sapiente veniam eaque
+                            debitis est iste ullam consequatur unde, adipisci nostrum? In, veritatis at? Fugit quibusdam
+                            vel
+                            distinctio eligendi. Quod, dolore!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

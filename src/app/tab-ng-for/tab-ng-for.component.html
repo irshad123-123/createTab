@@ -1,0 +1,29 @@
+<div class="row mt-3">
+    <div class="col-md-8 offset-md-2">
+        <h2>Tab Using (ngFor)</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul class="nav nav-pills mb-2">
+                    <li class="nav-item" *ngFor='let skill of skillsArr'>
+                        <a 
+                        (click) = "selectedSkill = skill.skillName"
+                        [ngClass]="{
+                        active : selectedSkill.toLowerCase().includes(skill.skillName.toLowerCase())
+                    }"
+                     class="nav-link text-capitalize" href="javascript:;">
+                            {{skill.skillName | titlecase}}
+                        </a>
+                    </li>
+                </ul>
+                <ng-container *ngFor='let skill of skillsArr'>
+                    <div class="card" *ngIf="selectedSkill.toLowerCase().includes(skill.skillName.toLowerCase())">
+                        <div class="card-body">
+                            <strong class="text-capitalize">{{skill.skillName}}</strong>
+                            {{skill.skillContent}}
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

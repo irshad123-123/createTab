@@ -1,0 +1,60 @@
+<div class="row mb-5">
+    <div class="col-md-8 offset-md-2">
+        <h2>Tab Using (ngSwitch)</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul class="nav nav-pills mb-2">
+                    <li class="nav-item" *ngFor="let skill of skillsArr">
+                        <a (click)="setSelectedSkill(skill.skillName)"
+                            [class.active]="selectedSkill.includes(skill.skillName)" class="nav-link text-capitalize"
+                            href="javascript:;">
+                            {{skill.skillName}}
+                        </a>
+                    </li>
+                </ul>
+                <div [ngSwitch] = "selectedSkill">
+                    <div
+                    *ngSwitchCase = "'html'"
+                    class="card">
+                        <div class="card-body">
+                            <strong>HTML</strong>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur consequuntur delectus
+                            natus maxime adipisci quas minima accusantium dicta! Quisquam tempora sint velit atque
+                            voluptatem excepturi accusantium. Quas iure vitae a.
+                        </div>
+                    </div>
+                    <div 
+                    *ngSwitchCase = "'css'"
+                    class="card">
+                        <div class="card-body">
+                            <strong>CSS</strong>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur consequuntur delectus
+                            natus maxime adipisci quas minima accusantium dicta! Quisquam tempora sint velit atque
+                            voluptatem excepturi accusantium. Quas iure vitae a.
+                        </div>
+                    </div>
+                    <div
+                    *ngSwitchCase = "'javascript'"
+                    class="card">
+                        <div class="card-body">
+                            <strong>Javascript</strong>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur consequuntur delectus
+                            natus maxime adipisci quas minima accusantium dicta! Quisquam tempora sint velit atque
+                            voluptatem excepturi accusantium. Quas iure vitae a.
+                        </div>
+                    </div>
+                    <div
+                    *ngSwitchCase = "'angular'"
+                    class="card">
+                        <div class="card-body">
+                            <strong>Angular</strong>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur consequuntur delectus
+                            natus maxime adipisci quas minima accusantium dicta! Quisquam tempora sint velit atque
+                            voluptatem excepturi accusantium. Quas iure vitae a.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
